@@ -12,6 +12,9 @@
 - Eyelid Tumor: 안검종양
 - Nuclear Sclerosis: 핵경화
 - Epiphora: 유루증
+- NoneExistence: 무증상
+
+개 안구 이미지만 학습한 모델입니다.
 
 ### 참고자료
 https://zeuskwon-ds.tistory.com/49 를 클론하여 코드 작성하였습니다.
