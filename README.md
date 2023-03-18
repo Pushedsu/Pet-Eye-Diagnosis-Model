@@ -12,3 +12,6 @@
 - Eyelid Tumor: 안검종양
 - Nuclear Sclerosis: 핵경화
 - Epiphora: 유루증
+
+### 참고자료
+https://zeuskwon-ds.tistory.com/49 를 클론하여 코드 작성하였습니다.
