@@ -20,4 +20,5 @@
 https://zeuskwon-ds.tistory.com/49 를 클론하여 코드 작성하였습니다.
 
 더 많은 데이터를 넣어 시도해본 전이학습 1epoch 시간과 accuarcy입니다.
+
 ![1](https://user-images.githubusercontent.com/109027302/230709038-16776a4c-fa41-46ff-a25a-55e08a28b741.PNG)
