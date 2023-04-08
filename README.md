@@ -23,4 +23,6 @@ https://zeuskwon-ds.tistory.com/49 를 클론하여 코드 작성하였습니다
 
 아래 표의 데이터 셋의 비율은 간이안구진단모델_테스트.ipynb에서 확인할 수 있습니다.
 
+v1과 테스트 파일의 데이터 셋의 차이가 있습니다. 그리고 v1에는 overfitting을 방지하는 callbacks 옵션을 추가하였습니다.
+
 ![1](https://user-images.githubusercontent.com/109027302/230709038-16776a4c-fa41-46ff-a25a-55e08a28b741.PNG)
