@@ -1,24 +1,32 @@
 # Pet-Eye-Diagnosis-Model
 
+## ⚙️ 딥러닝 모델 환경
 
-## 라벨 목록
-- Conjunctivitis: 결막염
-- Corneal Ulcerative Disease: 궤양성각막질환
-- Cataract: 백내장
-- None Corneal Ulcerative Disease: 비궤양성각막질환
-- Pigmented Keratitis: 색소 침착성 각막염
-- Entropion: 안검 내반증
-- Blepharitis: 안검염
-- Eyelid Tumor: 안검종양
-- Nuclear Sclerosis: 핵경화
-- Epiphora: 유루증
-- NoneExistence: 무증상
+### 안구 질환 목록
+- 안검염(Blepharitis):  눈을 둘러싸고 있는 두 개의 눈꺼풀 사이에 있는 점막 주변에 생긴
+- 안검종양(Eyelid Tumor): 눈을 둘러싸고 있는 두 개의 눈꺼풀 사이에 있는 점막 주변에 생긴 종양
+- 안검내반증(Entropion): 안구 주변에 있는 안검의 내 측면이 눈으로 밀려들어 가거나 안구를 압박하는
+- 유루증(Epiphora): 눈 주변의 털이 지속적으로 축축해지고 붉은색으로 변하는 증상
+- 결막염(Conjunctivitis): 눈 결막에 생기는 염증
+- 핵경화(Nuclear Sclerosis): 수정체의 중심부가 굳어지는 증상
+- 백내장(Cataract): 무색 투명한 조직인 수정체에 혼탁이 생기는 증상
+- 색소침착성 각막염(Pigmented Keratitis): 각막에 색소가 침착되어 염증이 동반되는
+- 궤양성 각막질환(Corneal Ulcerative Disease): 각막의 표면이 손상되어 열공이 생기는 상태로 눈이 붉어지고 부어오름
+- 비 궤양성 각막질환(None Corneal Ulcerative Disease): 각막 아래층까지 염색되지 않는 각막질환
+- 무증상(NoneExistence): 증상이 발견되지 않은 상태
 
-개 안구 이미지만 학습한 모델입니다.
+### 참고 자료
+- 해당 블로그에 업로드 된 코드를 참고하여 구현하였습니다.](https://zeuskwon-ds.tistory.com/49)
 
-### 참고자료
-https://zeuskwon-ds.tistory.com/49 를 클론하여 코드 작성하였습니다.
+### 학습 데이터 출처
 
+- [AI HUB 반려동물 안구 질환 데이터](https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=realm&dataSetSn=562)
+
+최종 모델의 학습 DataSet 은 " 141,452장 - train DataSet ", " 35,363장 - 검증 DataSet ", " 22,058장 - test DataSet "으로 구성하였습니다.
+</br>
+
+
+## ⛏️모델 테스트
 더 많은 데이터를 넣어 시도해본 전이학습 1epoch 시간과 accuarcy입니다.
 
 아래 표의 데이터 셋의 비율은 간이안구진단모델_테스트.ipynb에서 확인할 수 있습니다.
@@ -26,3 +34,21 @@ https://zeuskwon-ds.tistory.com/49 를 클론하여 코드 작성하였습니다
 v1과 테스트 파일의 데이터 셋의 차이가 있습니다. 그리고 v1에는 overfitting을 방지하는 callbacks 옵션을 추가하였습니다.
 
 ![1](https://user-images.githubusercontent.com/109027302/230709038-16776a4c-fa41-46ff-a25a-55e08a28b741.PNG)
+
+표를 통해 accuracy는 “DenseNet201”모델이 가장 높음을 알 수 있었고, 이를 메인 전이 학습모델로 설정하고 출력층을 라벨의 개수만큼 조절하여 진행하였습니다.
+
+그러나 early stopping 을 설정하고 epoch를 높였을 때, validation loss가 더 이상 내려가지 않았는 과적합 현상을 발견할 수 있었고, accuracy 또한 만족스러운 결과를 내지 못해 새로운 CNN 구조를 직접 작성하여 모델을 학습시켰습니다.
+
+개선한 CNN 구조를 통해 accuracy를 높일 수는 있었으나, 학습시킨 모델을 테스트한 결과 새로운 데이터에 대한 정확도가 기준치 더 낮았기 때문에, 예측 결과 상위 3개를 보여주는 방 향으로 설정하였습니다.
+
+## 🚫 해결했던 문제!
+다른 모델을 적용하여도 정확도는 비슷하였기에 정확도를 높이는 방안으로는 더 많은 데이터 추가 혹은 클래스의 수를 줄여야 했습니다.
+
+데이터를 추가하기에는 무리가 있었고 클래스를 줄이자니 진단할 질 병들의 수가 확 줄어드는 문제가 있었습니다. 
+
+그리하여 진단 결과를 하나만 출력하는 이전과 달리 상위 3개 결과를 보여주어 진단의 정확도를 높이고 보조 안구 진단 서비스를 구현하는 방식으로 바꾸었습니다.
+
+top3.ipynb 파일에 코드를 살펴보시면 상위 3개 진단 결과 중에 진단 결과가 참일 확률이 84.36%로 이전보다 정확도가 높아짐 을 확인할 수 있습니다.
+
+## 서비스 구현 시 사용된 모델
+- 조만간 올릴 예정입니다! [파일 찾는 중...]
