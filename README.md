@@ -59,4 +59,4 @@ Test DataSet으로 정확도를 구해본 결과 61.87퍼센트의 정확도를 
 top3.ipynb 파일에 코드를 살펴보시면 상위 3개 진단 결과 중에 진단 결과가 참일 확률이 84.36%로 이전보다 정확도가 높아짐 을 확인할 수 있습니다.
 
 ## 서비스 구현 시 사용된 모델
-- 조만간 올릴 예정입니다! [파일 찾는 중...]
+- [서비스에 사용된 모델.ipynb](https://github.com/Pushedsu/Pet-Eye-Diagnosis-Model/blob/main/%EA%B0%84%EC%9D%B4%EC%95%88%EA%B5%AC%EC%A7%84%EB%8B%A8_v3.ipynb)
