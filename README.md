@@ -1,6 +1,20 @@
 # Pet-Eye-Diagnosis-Model
 
-## ⚙️ 딥러닝 모델 환경
+## ⚙️ 개발 환경
+
+운영체제: Window10
+
+프로세서: Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz 2.90GHz
+
+그래픽카드: NVIDIA® GPU RTX 2060S 8GB
+
+RAM: 16GB
+
+Version: Tensorflow-2.10.0 Tensorflow_gpu-2.10.0 cuda 11.2 cuDDN 8.1 python 3.10.6
+
+Code Editor: JupyterNoteBook
+
+## 🔧 딥러닝 모델
 
 ### 안구 질환 목록
 - 안검염(Blepharitis):  눈을 둘러싸고 있는 두 개의 눈꺼풀 사이에 있는 점막 주변에 생긴
